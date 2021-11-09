@@ -138,12 +138,13 @@ int main(int argc, char* argv[])
         return 1;
     std::int64_t x = parsed.first;
     auto result = scalar_independent_abs(x);
-    std::cout << result.iterations << ' ' << result.ns_per_iter << ' ' << result.ticks_per_iter << '\n';
+    std::cout << "iter,ns/iter,ticks/iter" << '\n';
+    std::cout << result.iterations << ',' << result.ns_per_iter << ',' << result.ticks_per_iter << '\n';
     result = scalar_dependent_abs(x);
-    std::cout << result.iterations << ' ' << result.ns_per_iter << ' ' << result.ticks_per_iter << '\n';
+    std::cout << result.iterations << ',' << result.ns_per_iter << ',' << result.ticks_per_iter << '\n';
     result = vector_independent_abs(x);
-    std::cout << result.iterations << ' ' << result.ns_per_iter << ' ' << result.ticks_per_iter << '\n';
+    std::cout << result.iterations << ',' << result.ns_per_iter << ',' << result.ticks_per_iter << '\n';
     result = vector_dependent_abs(x);
-    std::cout << result.iterations << ' ' << result.ns_per_iter << ' ' << result.ticks_per_iter << '\n';
+    std::cout << result.iterations << ',' << result.ns_per_iter << ',' << result.ticks_per_iter << '\n';
     return 0;
 }
