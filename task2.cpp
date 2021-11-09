@@ -94,7 +94,7 @@ int main()
     std::mt19937 rng(eng());
     std::uniform_int_distribution<std::mt19937::result_type> dist255(0,255);
 
-    size_t height = 300;
+    size_t height = 3000000;
     pic_original.resize(height);
 
     for(int i = 0; i < height; ++i)
@@ -106,7 +106,7 @@ int main()
     }
 
     std::cout << "iter,ms,ticks" << '\n';
-    for (std::uint64_t iter = 1000;  iter <= 1000000; iter*=10)
+    for (std::uint64_t iter = 100;  iter <= 100000; iter*=1000)
     {
         aux::Timings result;
         result = mesure_blur(blur_basic, pic_original, pic_blur, iter);
